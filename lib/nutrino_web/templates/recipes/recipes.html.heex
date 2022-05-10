@@ -1,0 +1,21 @@
+<h1> Valid recipes</h1>
+<table>
+    <tr>
+        <th>Recipe name</th>
+        <th>Ingredients</th>
+        <th>Total fat</th>
+        <th>Total carbohydrates</th>
+        <th>Total protein</th>
+        <th>Link</th>
+    </tr>
+    <%= for recipe <- @recipes do %>
+    <tr>
+        <td><%= recipe.label %></td>
+        <td><%= recipe.description %></td>
+        <td><%= recipe.nf_total_fat %> g</td>
+        <td><%= recipe.nf_total_carbohydrate %> g</td>
+        <td><%= recipe.nf_protein %> g</td>
+        <td><%= link "Show", to: recipe.url %></td>
+    </tr>
+    <% end %>
+</table>

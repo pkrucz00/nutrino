@@ -1,0 +1,13 @@
+<div class="phx-hero">
+    <h1>Welcome to Nutrino - handy recipe organizer</h1>
+    <h2>Tell me what do you want to cook and how much nutrition do you need</h2>
+    <%= form_for @conn, Routes.recipes_path(@conn, :create), fn f -> %>
+        <%= search_input f, :search_string %>
+        <p><b>Mimimal amount of nutritions in the meal</b></p>
+        
+        <div> fat <%= text_input f, :fat %></div>
+        <div> carbohydrates <%= text_input f, :carbohydrates %></div>
+        <div> protein <%= text_input f, :protein %></div>
+        <%= submit "Search" %>
+    <% end %>
+</div>
